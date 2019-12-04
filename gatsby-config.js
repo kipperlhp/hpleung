@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
-    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    author: '@gatsbyjs',
+    title: 'H.P.Leung',
+    description: 'H.P.Leung is a Software Engineer based in Hong Kong.',
+    author: 'H.P.Leung',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -19,13 +19,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'H.P.Leung',
+        short_name: 'hpleng',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        background_color: '#0F0F0F',
+        theme_color: '#0F0F0F',
+        display: 'standalone',
+        icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -8,7 +8,7 @@ import Image from '../components/atoms/Image'
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-icon.png" }) {
+      placeholderImage: file(relativePath: { eq: "propic.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
@@ -20,9 +20,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
+      <h1>Hi</h1>
       <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
         <Image src={data.placeholderImage.childImageSharp.fluid} />
       </div>
