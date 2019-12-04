@@ -1,5 +1,18 @@
-import { configure } from '@storybook/react'
+import React from 'react'
+import { configure, addDecorator } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import { action } from "@storybook/addon-actions"
+import { ThemeProvider } from 'styled-components'
+import appTheme from '../src/components/theme'
+
+addDecorator((story, context) => withInfo()(story)(context))
+addDecorator(story => 
+  <ThemeProvider theme={appTheme}>
+    <div style={{ paddingTop: 24 }}>
+      {story()}
+    </div>
+  </ThemeProvider>
+)
 
 // automatically import all files ending in *.stories.js
 configure(require.context('../src/components', true, /\.stories\.js$/), module)
