@@ -18,6 +18,44 @@ module.exports = ({ config }) => {
     require.resolve("babel-plugin-remove-graphql-queries"),
   ]
 
+  // TO-DO: load svg in storybook
+
+  // config.module.rules = config.module.rules.map(rule => {
+  //   if (rule.test.toString().includes('svg')) {
+  //     const test = rule.test.toString().replace('svg|', '').replace(/\//g, '')
+  //     return {
+  //       ...rule,
+  //       test: new RegExp(test),
+  //     }
+  //   }
+  //   return rule
+  // // })
+
+  // const svgRules = {
+  //   test: /\.svg$/,
+  //   use: [
+  //     {
+  //       loader: require.resolve("babel-loader"),
+  //       options: {
+  //         presets: [
+  //           require.resolve("@babel/preset-react"),
+  //           require.resolve("@babel/preset-env"),
+  //         ],
+  //         plugins: [
+  //           require.resolve("@babel/plugin-proposal-class-properties"),
+  //         ],
+  //       }
+  //     },
+  //     {
+  //       loader: require.resolve("react-svg-loader"),
+  //       options: {
+  //         jsx: true, // true outputs JSX tags
+  //       }
+  //     },
+  //   ],
+  // }
+  // config.module.rules.push(svgRules)
+
   // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
   config.resolve.mainFields = ["browser", "module", "main"]
 
