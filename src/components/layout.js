@@ -5,16 +5,54 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import { palette, ifNotProp } from 'styled-tools'
 import { useStaticQuery, graphql } from 'gatsby'
-import { ThemeProvider } from 'styled-components'
+import debounce from 'lodash/debounce'
+import styled, { ThemeProvider, css } from 'styled-components'
+import { Flex } from '@rebass/grid'
+import { animateScroll as scroll } from 'react-scroll'
+import Viewport from './atoms/Viewport'
+import Icon from './atoms/Icon'
 
 import Header from './header'
 import appTheme from './theme'
 import './layout.css'
 
+const StyledFooter = styled.footer`
+  background: ${palette('primary', 1)};
+  min-height: 100px;
+`
+
+const MainContent = styled.main`
+  flex: 1 1 auto;
+`
+
+const UpIconBtn = styled(Icon)`
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: ease 0.3s;
+  ${ifNotProp('isVisible', css`
+    width: 0;
+    transform: translateY(50px);
+  `)}
+`
+
 const Layout = ({ children }) => {
+  const [isUpBtnVisible, setUpBtnVisible] = useState(false)
+  const scrollListener = () => {
+    const scrollOffset = window.scrollY
+    if (scrollOffset > 150) {
+      setUpBtnVisible(true)
+    } else {
+      setUpBtnVisible(false)
+    }
+  }
+  const debouncedScrollListener = debounce(scrollListener, 100)
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,22 +63,32 @@ const Layout = ({ children }) => {
     }
   `)
 
+  useEffect(() => {
+    window.addEventListener('scroll', debouncedScrollListener)
+    return (() => {
+      window.removeEventListener('scroll', debouncedScrollListener)
+    })
+  })
+
   return (
     <ThemeProvider theme={appTheme}>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: '0 auto',
-          maxWidth: 960,
-          padding: '0px 1.0875rem 1.45rem',
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
+      <Flex flexDirection="column" style={{ height: '100%' }}>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <MainContent>
+          <Viewport>
+            {children}
+          </Viewport>
+        </MainContent>
+        <StyledFooter>
           {`©${new Date().getFullYear()}`}
-        </footer>
-      </div>
+        </StyledFooter>
+        <UpIconBtn
+          icon="circle-up"
+          width="40px"
+          isVisible={isUpBtnVisible}
+          onClick={() => scroll.scrollToTop({ duration: 500 })}
+        />
+      </Flex>
     </ThemeProvider>
   )
 }

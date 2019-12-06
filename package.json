@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "H.P.Leung",
   "dependencies": {
+    "@rebass/grid": "^6.1.0",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.17.6",
     "gatsby-image": "^2.2.30",
@@ -16,10 +17,12 @@
     "gatsby-plugin-styled-components": "^3.1.14",
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-transformer-sharp": "^2.3.1",
+    "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
+    "react-scroll": "^1.7.14",
     "styled-components": "^4.4.1",
     "styled-theme": "^0.3.3",
     "styled-tools": "^1.7.1"

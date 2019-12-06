@@ -1,21 +1,22 @@
+import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import React from 'react'
+import styled from 'styled-components'
+import { palette } from 'styled-tools'
+import Viewport from './atoms/Viewport'
+
+const StyledHeader = styled.header`
+  background: ${palette('primary', 0)};
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+`
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: '#0F0F0F',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
+  <StyledHeader>
+    <Viewport>
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
@@ -27,8 +28,8 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-    </div>
-  </header>
+    </Viewport>
+  </StyledHeader>
 )
 
 Header.propTypes = {
