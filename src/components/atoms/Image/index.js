@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled, { css } from 'styled-components'
 import Img from 'gatsby-image/withIEPolyfill'
+import { ifProp } from 'styled-tools'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,13 +15,20 @@ import Img from 'gatsby-image/withIEPolyfill'
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = ({ src, title, alt, fixed, ...props }) => {
+const StyledImg = styled(Img)`
+  ${ifProp('circle', css`
+    border-radius: 50%;
+  `)}
+`
+
+const Image = ({ src, title, alt, fixed, circle, ...props }) => {
   return (
-    <Img
+    <StyledImg
       fluid={!fixed ? src : undefined}
       fixed={fixed ? src : undefined}
       title={title}
       alt={alt}
+      circle={circle}
       {...props}
     />
   )
@@ -30,6 +39,7 @@ Image.propTypes = {
   title: PropTypes.string,
   alt: PropTypes.string,
   fixed: PropTypes.bool,
+  circle: PropTypes.bool,
 }
 
 Image.defaultProps = {
@@ -37,6 +47,7 @@ Image.defaultProps = {
   title: '',
   alt: '',
   fixed: false,
+  circle: false,
 }
 
 export default Image

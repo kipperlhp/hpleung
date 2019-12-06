@@ -5,14 +5,14 @@ import Image from '.'
 
 const data = useStaticQuery(graphql`
   query {
-    fixedImage: file(relativePath: { eq: "gatsby-icon.png" }) {
+    fixedImage: file(relativePath: { eq: "propic.jpg" }) {
       childImageSharp {
         fixed(width: 150, height: 150) {
           ...GatsbyImageSharpFixed
         }
       }
     },
-    fluidImage: file(relativePath: { eq: "gatsby-icon.png" }) {
+    fluidImage: file(relativePath: { eq: "propic.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid
@@ -28,6 +28,9 @@ storiesOf('Atoms|Image', module)
   ))
   .add('fixed', () => (
     <Image src={data.fixedImage.childImageSharp.fixed} fixed />
+  ))
+  .add('circle', () => (
+    <Image src={data.fixedImage.childImageSharp.fixed} fixed circle />
   ))
   .add('alt & title', () => (
     <Image src={data.fluidImage.childImageSharp.fluid} alt="test" title="test title" />

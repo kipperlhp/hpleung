@@ -48,6 +48,7 @@ const IndexPage = () => {
         <Image
           src={data.placeholderImage.childImageSharp.fixed}
           fixed
+          circle
         />
       </Flex>
     </Layout>
