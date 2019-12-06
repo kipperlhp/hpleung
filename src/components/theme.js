@@ -7,7 +7,7 @@ const theme = {
     grayscale: ['#212121', '#616161', '#9E9E9E', '#BDBDBD', '#E0E0E0', '#FFFFFF']
   },
   fonts: {
-    primary: 'Helvetica Neue, Helvetica, Roboto, sans-serif',
+    primary: 'Segoe UI, Helvetica Neue, Helvetica, Roboto, sans-serif',
   },
   sizes: {
     mobile: '375px',

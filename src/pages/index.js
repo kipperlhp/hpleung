@@ -8,6 +8,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Image from '../components/atoms/Image'
 import Icon from '../components/atoms/Icon'
+import Text from '../components/atoms/Text'
 
 const Banner = styled(Flex)`
   justify-content: center;
@@ -32,8 +33,8 @@ const IndexPage = () => {
     <Layout>
       <SEO title="H.P.Leung" />
       <Banner>
-        <h1>H.P.Leung</h1>
-        <h2>Software Developer</h2>
+        <Text variant="h1" bold>H.P.Leung</Text>
+        <Text variant="h2" bold>Software Developer</Text>
         <ScrollLink
           to="profile"
           smooth

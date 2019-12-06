@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { palette } from 'styled-tools'
 import Viewport from './atoms/Viewport'
+import Text from './atoms/Text'
 
 const StyledHeader = styled.header`
   background: ${palette('primary', 0)};
@@ -17,7 +18,7 @@ const StyledHeader = styled.header`
 const Header = ({ siteTitle }) => (
   <StyledHeader>
     <Viewport>
-      <h1 style={{ margin: 0 }}>
+      <Text variant="h3" bold>
         <Link
           to="/"
           style={{
@@ -27,7 +28,7 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-      </h1>
+      </Text>
     </Viewport>
   </StyledHeader>
 )
