@@ -10,6 +10,9 @@ const StyledWrapper = styled.div`
   width: ${prop('width')};
   height: ${prop('height')};
   color: ${({ color }) => palette(color, 0)};
+  svg {
+    fill: currentColor;
+  }
 `
 
 const Icon = ({ icon, color, width, height, ...props }) => {
@@ -35,7 +38,7 @@ Icon.propTypes = {
 
 Icon.defaultProps = {
   color: 'primary',
-  width: '28px',
+  width: '1rem',
 }
 
 export default Icon

@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { switchProp, ifProp, prop } from 'styled-tools'
 import theme from '../../theme'
 
-const TextWrap = ({ palette, paletteIndex, variant, bold, textAlign, ...props }) => {
+const TextWrap = ({ palette, paletteIndex, variant, bold, align, ...props }) => {
   switch (variant) {
     case 'h1':
       return <h1 {...props} />
@@ -30,7 +30,7 @@ const StyledDiv = styled(TextWrap)`
     body1: '1rem',
   })};
   line-height: 1.5;
-  text-align: ${prop('textAlign')};
+  text-align: ${prop('align')};
   font-weight: ${ifProp('bold', 'bold', 'normal')};
   margin-block-start: unset;
   margin-block-end: unset;
@@ -54,7 +54,7 @@ Text.propTypes = {
   paletteIndex: PropTypes.number,
   variant: PropTypes.string,
   bold: PropTypes.bool,
-  textAlign: PropTypes.string,
+  align: PropTypes.string,
 }
 
 Text.defaultProps = {
