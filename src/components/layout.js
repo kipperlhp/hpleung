@@ -13,7 +13,6 @@ import debounce from 'lodash/debounce'
 import styled, { ThemeProvider, css } from 'styled-components'
 import { Flex } from '@rebass/grid'
 import { animateScroll as scroll } from 'react-scroll'
-import Viewport from './atoms/Viewport'
 import Icon from './atoms/Icon'
 
 import Header from './header'
@@ -35,17 +34,26 @@ const UpIconBtn = styled(Icon)`
   bottom: 20px;
   right: 20px;
   transition: ease 0.3s;
+  :hover {
+    transform: translateY(-4px);
+  }
   ${ifNotProp('isVisible', css`
     width: 0;
     transform: translateY(50px);
   `)}
 `
+const menuItems = [
+  { name: 'About', to: 'about' },
+  { name: 'Timeline', to: 'timeline' },
+  { name: 'My Works', to: 'my-works' },
+  { name: 'Contact', to: 'contact' },
+]
 
 const Layout = ({ children }) => {
   const [isUpBtnVisible, setUpBtnVisible] = useState(false)
   const scrollListener = () => {
     const scrollOffset = window.scrollY
-    if (scrollOffset > 150) {
+    if (scrollOffset > 300) {
       setUpBtnVisible(true)
     } else {
       setUpBtnVisible(false)
@@ -73,11 +81,13 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={appTheme}>
       <Flex flexDirection="column" style={{ height: '100%' }}>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header
+          title={data.site.siteMetadata.title}
+          menuItems={menuItems}
+          transparent={!isUpBtnVisible}
+        />
         <MainContent>
-          <Viewport>
-            {children}
-          </Viewport>
+          {children}
         </MainContent>
         <StyledFooter>
           {`©${new Date().getFullYear()}`}
