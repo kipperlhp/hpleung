@@ -7,7 +7,7 @@
 
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { palette, ifNotProp } from 'styled-tools'
+import { ifNotProp } from 'styled-tools'
 import { useStaticQuery, graphql } from 'gatsby'
 import debounce from 'lodash/debounce'
 import styled, { ThemeProvider, css } from 'styled-components'
@@ -16,13 +16,9 @@ import { animateScroll as scroll } from 'react-scroll'
 import Icon from './atoms/Icon'
 
 import Header from './header'
+import Footer from './footer'
 import appTheme from './theme'
 import './layout.css'
-
-const StyledFooter = styled.footer`
-  background: ${palette('primary', 1)};
-  min-height: 100px;
-`
 
 const MainContent = styled.main`
   flex: 1 1 auto;
@@ -31,8 +27,8 @@ const MainContent = styled.main`
 const UpIconBtn = styled(Icon)`
   cursor: pointer;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 0.8rem;
+  right: 0.8rem;
   transition: ease 0.3s;
   :hover {
     transform: translateY(-4px);
@@ -89,12 +85,10 @@ const Layout = ({ children }) => {
         <MainContent>
           {children}
         </MainContent>
-        <StyledFooter>
-          {`©${new Date().getFullYear()}`}
-        </StyledFooter>
+        <Footer />
         <UpIconBtn
           icon="circle-up"
-          width="40px"
+          width="2.5rem"
           isVisible={isUpBtnVisible}
           onClick={() => scroll.scrollToTop({ duration: 500 })}
         />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { palette } from 'styled-theme'
 import { ifProp, prop } from 'styled-tools'
 import { Link as ScrollLink } from 'react-scroll'
 import ReactResizeDetector from 'react-resize-detector'
@@ -34,6 +35,9 @@ const MenuIcon = styled(Icon)`
   cursor: pointer;
   transition: ease 0.3s;
   transform: ${ifProp({ icon: 'close' }, 'rotate(-180deg)')};
+  :hover {
+    color: ${palette('primary', 3)};
+  }
 `
 
 // `display: block` must be applied to make css transform work
