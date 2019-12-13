@@ -28,6 +28,8 @@ const StyledDiv = styled(TextWrap)`
     h2: '1.62671rem',
     h3: '1.38316rem',
     body1: '1rem',
+    body2: '0.85028rem',
+    body3: '0.78405rem',
   })};
   line-height: 1.5;
   text-align: ${prop('align')};
