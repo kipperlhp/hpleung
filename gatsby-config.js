@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'H.P.Leung',
-    description: 'H.P.Leung is a Software Engineer based in Hong Kong.',
+    description: 'H.P.Leung is a Software Developer based in Hong Kong.',
     author: 'H.P.Leung',
   },
   plugins: [
@@ -20,7 +20,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'H.P.Leung',
-        short_name: 'hpleng',
+        short_name: 'H.P.Leung',
         start_url: '/',
         background_color: '#0F0F0F',
         theme_color: '#0F0F0F',

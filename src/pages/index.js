@@ -1,57 +1,63 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import { palette } from 'styled-theme'
 import { Flex } from '@rebass/grid'
-import { Link as ScrollLink, Element } from 'react-scroll'
+import { Link as ScrollLink } from 'react-scroll'
+import Fade from 'react-reveal/Fade'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Image from '../components/atoms/Image'
+import Viewport from '../components/atoms/Viewport'
 import Icon from '../components/atoms/Icon'
 import Text from '../components/atoms/Text'
+import AboutSection from '../components/sections/About'
 
 const Banner = styled(Flex)`
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  background:${palette('primary', 0)};
   height: 100vh;
+  background: linear-gradient(
+    180deg,
+    ${palette('primary', 0)} 0%,
+    ${palette('primary', 1)} 55%,
+    ${palette('primary', 2)} 75%,
+    ${palette('primary', 3)} 85%,
+    ${palette('white', 0)} 100%
+  );
+`
+
+const IconBtn = styled(Icon)`
+  cursor: pointer;
+  margin-bottom: 4px;
 `
 
 const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "propic.jpg" }) {
-        childImageSharp {
-          fixed(width: 250, height: 250) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      },
-    }
-  `)
   return (
     <Layout>
       <SEO title="H.P.Leung" />
       <Banner>
-        <Text variant="h1" bold>H.P.Leung</Text>
-        <Text variant="h2" bold>Software Developer</Text>
-        <ScrollLink
-          to="profile"
-          smooth
-          offset={-100}
-          duration={500}
-        >
-          <Icon icon="scroll-down" />
-        </ScrollLink>
+        <Viewport flexDirection="column" justifyContent="center" alignItems="center">
+          <Fade bottom cascade>
+            <Text variant="h1" palette="white" align="center" bold>H.P.Leung</Text>
+            <Text variant="h2" palette="white" align="center" bold>Software Developer</Text>
+            <Flex mt={24}>
+              <ScrollLink
+                to="about"
+                smooth
+                offset={-60}
+                duration={500}
+              >
+                <Flex flexDirection="column" alignItems="center">
+                  <IconBtn icon="mouse" color="white" width="32px" />
+                  <IconBtn icon="arrow-down-double" color="white" width="10px" height="20px" />
+                </Flex>
+              </ScrollLink>
+            </Flex>
+          </Fade>
+        </Viewport>
       </Banner>
-      <Element name="profile" />
-      <Flex justifyContent="center">
-        <Image
-          src={data.placeholderImage.childImageSharp.fixed}
-          fixed
-          circle
-        />
-      </Flex>
+      <Viewport flexDirection="column">
+        <AboutSection />
+      </Viewport>
     </Layout>
   )
 }
