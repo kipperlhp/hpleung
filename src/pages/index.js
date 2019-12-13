@@ -11,6 +11,7 @@ import Viewport from '../components/atoms/Viewport'
 import Icon from '../components/atoms/Icon'
 import Text from '../components/atoms/Text'
 import AboutSection from '../components/sections/About'
+import ContactSection from '../components/sections/Contact'
 
 const Banner = styled(Flex)`
   background:${palette('primary', 0)};
@@ -57,6 +58,7 @@ const IndexPage = () => {
       </Banner>
       <Viewport flexDirection="column">
         <AboutSection />
+        <ContactSection />
       </Viewport>
     </Layout>
   )
