@@ -35,7 +35,7 @@ const IconBtn = styled(Icon)`
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="H.P.Leung" />
+      <SEO title="H.P.Leung | Software Developer" />
       <Banner>
         <Viewport flexDirection="column" justifyContent="center" alignItems="center">
           <Fade bottom cascade>

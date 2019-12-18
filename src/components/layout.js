@@ -61,7 +61,7 @@ const Layout = ({ children }) => {
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
+          short_title
         }
       }
     }
@@ -78,7 +78,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={appTheme}>
       <Flex flexDirection="column" style={{ height: '100%' }}>
         <Header
-          title={data.site.siteMetadata.title}
+          title={data.site.siteMetadata.short_title}
           menuItems={menuItems}
           transparent={!isUpBtnVisible}
         />

@@ -4,13 +4,16 @@ import styled from 'styled-components'
 import { Flex, Box } from '@rebass/grid'
 import Icon from './atoms/Icon'
 import Text from './atoms/Text'
+import Viewport from './atoms/Viewport'
 
 const StyledFooter = styled.footer`
-  display: flex;
+  background: ${palette('primary', 1)};
+`
+
+const StyledViewport = styled(Viewport)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: ${palette('primary', 1)};
   padding: 3rem 1rem;
 `
 
@@ -33,7 +36,7 @@ const StyledIcon = styled(Icon)`
 
 const StyledDivider = styled.hr`
   width: 90%;
-  height: 0.125rem;
+  height: 0.0625rem;
   background: ${palette('white', 0)};
   margin: 1rem 0;
 `
@@ -43,24 +46,26 @@ const Footer = () => {
     <Box>
       <FooterWave icon="wave-bottom" width="100%" height="auto" />
       <StyledFooter>
-        <Flex>
-          <StyledA href="https://github.com/kipperlhp" target="_blank" rel="noopener noreferrer">
-            <StyledIcon icon="github" width="2rem" color="white" />
-          </StyledA>
-          <StyledA href="https://www.linkedin.com/in/hiu-pak-leung-374ba1113" target="_blank" rel="noopener noreferrer">
-            <StyledIcon icon="linkedin" width="2rem" color="white" />
-          </StyledA>
-          <StyledA href="https://angel.co/leung-hiu-pak" target="_blank" rel="noopener noreferrer">
-            <StyledIcon icon="angellist" width="2rem" color="white" />
-          </StyledA>
-          <StyledA href="http://facebook.com/profile.php" target="_blank" rel="noopener noreferrer">
-            <StyledIcon icon="facebook" width="2rem" color="white" />
-          </StyledA>
-        </Flex>
-        <StyledDivider />
-        <Text palette="white" align="center">
-          {`© ${new Date().getFullYear()} Leung Hiu Pak, All rights reserved.`}
-        </Text>
+        <StyledViewport>
+          <Flex>
+            <StyledA href="https://github.com/kipperlhp" target="_blank" rel="noopener noreferrer">
+              <StyledIcon icon="github" width="2rem" color="white" />
+            </StyledA>
+            <StyledA href="https://www.linkedin.com/in/hiu-pak-leung-374ba1113" target="_blank" rel="noopener noreferrer">
+              <StyledIcon icon="linkedin" width="2rem" color="white" />
+            </StyledA>
+            <StyledA href="https://angel.co/leung-hiu-pak" target="_blank" rel="noopener noreferrer">
+              <StyledIcon icon="angellist" width="2rem" color="white" />
+            </StyledA>
+            <StyledA href="http://facebook.com/profile.php" target="_blank" rel="noopener noreferrer">
+              <StyledIcon icon="facebook" width="2rem" color="white" />
+            </StyledA>
+          </Flex>
+          <StyledDivider />
+          <Text palette="white" align="center">
+            {`© ${new Date().getFullYear()} Leung Hiu Pak, All rights reserved.`}
+          </Text>
+        </StyledViewport>
       </StyledFooter>
     </Box>
   )

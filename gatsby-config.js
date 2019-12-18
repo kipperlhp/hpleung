@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'H.P.Leung',
-    description: 'H.P.Leung is a Software Developer based in Hong Kong.',
+    title: 'H.P.Leung | Software Developer',
+    short_title: 'H.P.Leung',
+    description: 'H.P.Leung (Leung Hiu Pak) is a Software Developer based in Hong Kong, focusing in web application development.',
     author: 'H.P.Leung',
+    image: 'https://hpleung.com/icons/icon-256x256.png',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

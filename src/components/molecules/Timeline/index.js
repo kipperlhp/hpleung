@@ -63,7 +63,7 @@ const Timeline = ({ items, ...props }) => {
               <>
                 <Flex flexDirection="column" mb="0.5rem">
                   <Text variant="body1" palette="white" bold>{title}</Text>
-                  <Text variant="body1" palette="white">{subTitle}</Text>
+                  <Text variant="body2" palette="white">{subTitle}</Text>
                 </Flex>
                 {content}
               </>
