@@ -173,7 +173,7 @@ const TimelineSection = () => {
     },
   ]
   return (
-    <ScrollSection name="timeline" mb="4rem">
+    <ScrollSection name="timeline" mb="10rem">
       <Timeline items={timelineItems} />
     </ScrollSection>
   )

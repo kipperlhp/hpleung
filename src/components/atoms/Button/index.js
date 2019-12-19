@@ -14,7 +14,7 @@ const StyledButton = styled.button`
   :hover {
     background: ${palette('primary', 0)};
     color: ${palette('white', 0)};
-    > div {
+    div {
       color: ${palette('white', 0)};
     }
   }

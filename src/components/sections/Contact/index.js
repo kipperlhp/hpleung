@@ -14,7 +14,7 @@ const EmailText = styled(Text)`
 
 const ContactSection = () => {
   return (
-    <ScrollSection name="contact" title="Contact" mb="4rem">
+    <ScrollSection name="contact" title="Contact" mb="10rem">
       <Fade bottom cascade>
         <Text align="center">
           Need to get in touch with me? Feel free to drop me an email!

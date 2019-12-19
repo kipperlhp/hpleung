@@ -10,7 +10,7 @@ const theme = {
     primary: 'Segoe UI, Helvetica Neue, Helvetica, Roboto, sans-serif',
   },
   sizes: {
-    mobile: '375px',
+    mobile: '414px',
     tablet: '768px',
     desktop: '1024px',
     maxWidth: '1024px',

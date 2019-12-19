@@ -28,7 +28,7 @@ const AboutSection = () => {
     }
   `)
   return (
-    <ScrollSection name="about" mb="4rem">
+    <ScrollSection name="about" mb="10rem">
       <Flex justifyContent="center" alignItems="center" flexDirection={['column', 'column', 'row']}>
         <Fade bottom cascade>
           <Box width="200px">

@@ -16,6 +16,8 @@ storiesOf('Atoms|Text', module)
       <br />
       <Text variant="body1">body1</Text>
       <br />
+      <Text variant="body2">body2</Text>
+      <br />
     </div>
   ))
   .add('bold', () => (
