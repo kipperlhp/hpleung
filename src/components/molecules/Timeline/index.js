@@ -34,6 +34,19 @@ const StyledVerticalTimeline = styled(VerticalTimeline)`
   .vertical-timeline-element-content-arrow {
     border-right: 10px solid ${palette('primary', 1)};
   }
+
+  /*
+    work-around fix for mobile screen unintentional jumps while scrolling,
+    by not using the bounce-2-inverse animation effect
+  */
+  @media only screen and (max-width: 1169px) {
+    /* .vertical-timeline--animate */
+    .vertical-timeline-element-content.bounce-in {
+      -webkit-animation: cd-bounce-2 0.6s !important;
+      -moz-animation: cd-bounce-2 0.6s !important;
+      animation: cd-bounce-2 0.6s !important;
+    }
+  }
 `
 
 const DateTag = styled.div`
