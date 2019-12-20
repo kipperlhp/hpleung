@@ -13,7 +13,7 @@ const ImageBox = styled(Box)`
     width: 50%;
   `)}
   ${breakpoint('mobile', css`
-    width: 100%;
+    width: 85%;
   `)}
 `
 
