@@ -51,7 +51,7 @@ const Footer = () => {
             <StyledA href="https://github.com/kipperlhp" target="_blank" rel="noopener noreferrer">
               <StyledIcon icon="github" width="2rem" color="white" />
             </StyledA>
-            <StyledA href="https://www.linkedin.com/in/hiu-pak-leung-374ba1113" target="_blank" rel="noopener noreferrer">
+            <StyledA href="https://www.linkedin.com/in/hpleung" target="_blank" rel="noopener noreferrer">
               <StyledIcon icon="linkedin" width="2rem" color="white" />
             </StyledA>
             <StyledA href="https://angel.co/leung-hiu-pak" target="_blank" rel="noopener noreferrer">
