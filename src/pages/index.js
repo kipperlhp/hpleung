@@ -33,6 +33,25 @@ const IconBtn = styled(Icon)`
   margin-bottom: 4px;
 `
 
+const BounceIconBtn = styled(IconBtn)`
+  animation-name: bounce;
+  -webkit-animation-name: bounce; /* Safari 4.0 - 8.0 */
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+  animation-iteration-count: infinite;
+  @keyframes bounce {
+    0% { transform: translateY(2px) }
+    50% { transform: translateY(-4px) }
+    100% { transform: translateY(2px) }
+  }
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes bounce {
+    0% { transform: translateY(2px) }
+    50% { transform: translateY(-4px) }
+    100% { transform: translateY(2px) }
+  }
+`
+
 const IndexPage = () => {
   return (
     <Layout>
@@ -42,7 +61,7 @@ const IndexPage = () => {
           <Fade bottom cascade>
             <Text variant="h1" palette="white" align="center" bold>H.P.Leung</Text>
             <Text variant="h2" palette="white" align="center" bold>Software Developer</Text>
-            <Flex mt={24}>
+            <Flex mt="3rem">
               <ScrollLink
                 to="about"
                 smooth
@@ -51,7 +70,7 @@ const IndexPage = () => {
               >
                 <Flex flexDirection="column" alignItems="center">
                   <IconBtn icon="mouse" color="white" width="32px" />
-                  <IconBtn icon="arrow-down-double" color="white" width="10px" height="20px" />
+                  <BounceIconBtn icon="arrow-down-double" color="white" width="10px" height="20px" />
                 </Flex>
               </ScrollLink>
             </Flex>
