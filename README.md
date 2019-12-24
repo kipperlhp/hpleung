@@ -13,7 +13,7 @@
 
   ```shell
   cd hpleung/
-  gatsby develop
+  npm run start
   ```
 
   Your site is now running at `http://localhost:8000`!
