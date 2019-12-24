@@ -12,7 +12,7 @@ import Icon from '../components/atoms/Icon'
 import Text from '../components/atoms/Text'
 import AboutSection from '../components/sections/About'
 import ContactSection from '../components/sections/Contact'
-import TimelineSection from '../components/sections/Timeline'
+import ExperienceSection from '../components/sections/Experience'
 import MyWorkSection from '../components/sections/MyWork'
 
 const Banner = styled(Flex)`
@@ -79,7 +79,7 @@ const IndexPage = () => {
       </Banner>
       <Viewport flexDirection="column">
         <AboutSection />
-        <TimelineSection />
+        <ExperienceSection />
         <MyWorkSection />
         <ContactSection />
       </Viewport>

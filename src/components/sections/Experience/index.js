@@ -8,7 +8,7 @@ import Image from '../../atoms/Image'
 import Icon from '../../atoms/Icon'
 import Text from '../../atoms/Text'
 
-const TimelineSection = () => {
+const ExperienceSection = () => {
   const data = useStaticQuery(graphql`
     query {
       veriGuideLogo: file(relativePath: { eq: "veriguide.jpg" }) {
@@ -26,21 +26,6 @@ const TimelineSection = () => {
         }
       },
       cmiLogo: file(relativePath: { eq: "cmi.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      },
-      ntuLogo: file(relativePath: { eq: "ntu.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      },
-      
-      cuhkLogo: file(relativePath: { eq: "cuhk.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 100) {
             ...GatsbyImageSharpFluid
@@ -108,35 +93,6 @@ const TimelineSection = () => {
       ),
     },
     {
-      title: 'International Student Exchange Program',
-      subTitle: 'Nanyang Technological University, Singapore',
-      date: 'Aug - Dec 2015',
-      node: <Image src={data.ntuLogo.childImageSharp.fluid} circle />,
-      content: (
-        <Flex flexDirection="column" mt="1rem">
-          <Text palette="white" variant="body2">
-            Exposed to a new educational culture by studying oversea
-          </Text>
-        </Flex>
-      ),
-    },
-    {
-      title: 'BSc Computer Science',
-      subTitle: 'The Chinese University of Hong Kong',
-      date: 'Dec 2015',
-      node: <Image src={data.cuhkLogo.childImageSharp.fluid} circle />,
-      content: (
-        <Flex flexDirection="column" mt="1rem">
-          <Text palette="white" variant="body2">Relevant Coursework:</Text>
-          <Text palette="white" variant="body2">
-            Data Structures, Software Engineering,
-            Mobile Computing and Applications Development,
-            Business Data and Database Management
-          </Text>
-        </Flex>
-      ),
-    },
-    {
       title: 'Business System Developer',
       subTitle: 'Ahsay Backup',
       date: 'Mar 2016 - Jun 2018',
@@ -173,10 +129,10 @@ const TimelineSection = () => {
     },
   ]
   return (
-    <ScrollSection name="timeline" mb="10rem">
+    <ScrollSection name="experience" mb="10rem">
       <Timeline items={timelineItems} />
     </ScrollSection>
   )
 }
 
-export default TimelineSection
+export default ExperienceSection

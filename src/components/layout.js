@@ -40,7 +40,7 @@ const UpIconBtn = styled(Icon)`
 `
 const menuItems = [
   { name: 'About', to: 'about' },
-  { name: 'Timeline', to: 'timeline' },
+  { name: 'Experience', to: 'experience' },
   { name: 'My Works', to: 'my-works' },
   { name: 'Contact', to: 'contact' },
 ]
