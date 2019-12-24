@@ -20,7 +20,7 @@ const ImageBox = styled(Box)`
 const MyWork = () => {
   const data = useStaticQuery(graphql`
     query {
-      imageProfolio: file(relativePath: { eq: "my-profolio.jpg" }) {
+      imagePortfolio: file(relativePath: { eq: "my-portfolio.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 480) {
             ...GatsbyImageSharpFluid
@@ -43,9 +43,9 @@ const MyWork = () => {
         <ImageBox>
           <Fade bottom>
             <ImageButtonBox
-              title="My Profolio"
+              title="My Portfolio"
               description="A personal website showing my info & works"
-              imgSrc={data.imageProfolio.childImageSharp.fluid}
+              imgSrc={data.imagePortfolio.childImageSharp.fluid}
               btnLink="https://www.hpleung.com"
             />
           </Fade>

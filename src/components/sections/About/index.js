@@ -44,7 +44,7 @@ const AboutSection = () => {
               <b>H.P.Leung (Leung Hiu Pak)&nbsp;</b>
               is a Software Developer based in Hong Kong,
               focusing in web application development. He graduated from The Chinese
-              University of Hong Kong (CUHK), BSc Compouter Science.
+              University of Hong Kong (CUHK), BSc Computer Science.
             </DescriptionText>
             <Flex mt={24} justifyContent={['center', 'center', 'flex-start']}>
               <Button>

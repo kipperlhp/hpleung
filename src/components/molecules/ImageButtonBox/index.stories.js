@@ -18,7 +18,7 @@ const data = useStaticQuery(graphql`
 storiesOf('Molecules|ImageButtonBox', module)
   .add('default', () => (
     <ImageButtonBox
-      title="My Profolio"
+      title="My Portfolio"
       description="A personal website showing my info & works"
       imgSrc={data.image.childImageSharp.fluid}
       btnLink="https://www.hpleung.com"

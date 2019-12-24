@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  H.P.Leung's<br />Personal Profolio Website
+  H.P.Leung's<br />Personal Portfolio Website
 </h1>
 
 ## 🚀 Quick start
