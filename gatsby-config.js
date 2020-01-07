@@ -6,6 +6,7 @@ module.exports = {
     author: 'H.P.Leung',
     image: 'https://hpleung.com/icons/icon-256x256.png',
     siteUrl: 'https://www.hpleung.com',
+    googleSiteVerification: 'N1hXXWjF5TFVclREimkg8N0ZEgwaLCVX9etbsRyzWek',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
