@@ -34,6 +34,13 @@ const MyWork = () => {
           }
         }
       },
+      imageLegoChecker: file(relativePath: { eq: "lego-checker.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
     }
   `)
 
@@ -57,6 +64,16 @@ const MyWork = () => {
               description="A platform for planning and booking group dining experiences, with different enhancements and add-on services."
               imgSrc={data.imageTab.childImageSharp.fluid}
               btnLink="https://www.tab.asia"
+            />
+          </Fade>
+        </ImageBox>
+        <ImageBox>
+          <Fade bottom>
+            <ImageButtonBox
+              title="LEGO Checker"
+              description="An info checker for Lego sets"
+              imgSrc={data.imageLegoChecker.childImageSharp.fluid}
+              btnLink="https://lego-checker.netlify.com"
             />
           </Fade>
         </ImageBox>
