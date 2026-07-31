@@ -46,6 +46,20 @@ const ExperienceSection = () => {
           }
         }
       },
+      joyAetherLogo: file(relativePath: { eq: "joy-aether.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      cdcLogo: file(relativePath: { eq: "cdc.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
     }
   `)
 
@@ -115,9 +129,38 @@ const ExperienceSection = () => {
       content: (
         <Flex flexDirection="column" mt="1rem">
           <Text palette="white" variant="body2">
-            Worked as a full-stack developer for both frontend (ReactJs) and backend (NodeJs)
-            to build responsive and cross-browser web applications for clients, with database
-            structure design and RESTful API development
+            Worked as a full-stack developer (using ReactJs & NodeJs) to
+            build responsive and cross-browser web applications for clients,
+            with database structure design and RESTful API development
+          </Text>
+        </Flex>
+      ),
+    },
+    {
+      title: 'Frontend Developer',
+      subTitle: 'Joy Aether',
+      date: 'May 2020 - Feb 2024',
+      node: <Image src={data.joyAetherLogo.childImageSharp.fluid} circle />,
+      content: (
+        <Flex flexDirection="column" mt="1rem">
+          <Text palette="white" variant="body2">
+            Developed mobile and web application from front to backend (using ReactJS,
+            React Native, Java) for a variety of clients, including e-commerce systems,
+            control panels, and event campaign websites
+          </Text>
+        </Flex>
+      ),
+    },
+    {
+      title: 'Full Stack Engineer',
+      subTitle: 'Crypto.com',
+      date: 'Feb 2024 - Now',
+      node: <Image src={data.cdcLogo.childImageSharp.fluid} circle />,
+      content: (
+        <Flex flexDirection="column" mt="1rem">
+          <Text palette="white" variant="body2">
+            Delivered AI-driven solutions for crypto exchange platform, including
+            customer service, marketing tools, and innovative web3-related projects
           </Text>
         </Flex>
       ),
