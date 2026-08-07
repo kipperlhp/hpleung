@@ -11,8 +11,8 @@ const ContainerBox = styled(Box)`
   overflow: hidden;
   :hover {
     .coverImg {
-      -webkit-filter: blur(10px) opacity(40%) grayscale(70%);
-      filter: blur(10px) opacity(40%) grayscale(70%);
+      -webkit-filter: blur(6px) opacity(40%) grayscale(60%);
+      filter: blur(6px) opacity(40%) grayscale(60%);
     }
     .hoverLayer {
       opacity: 1;
@@ -59,7 +59,7 @@ const ImageButtonBox = ({ title, description, imgSrc, btnLink, ...props }) => {
 ImageButtonBox.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  imgSrc: PropTypes.string,
+  imgSrc: PropTypes.object,
   btnLink: PropTypes.string,
 }
 
