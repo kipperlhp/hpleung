@@ -9,10 +9,16 @@ import breakpoint from '../../../utils/breakpoint'
 
 const works = [
   {
-    title: 'My Portfolio',
-    description: 'A personal website showing my info & works',
-    imgKey: 'imagePortfolio',
-    url: 'https://www.hpleung.com',
+    title: 'Chitchat',
+    description: 'A real-time chatroom with anonymous functionality allowing users to chat with strangers',
+    imgKey: 'imageChitChat',
+    url: 'https://chitchat-hp.netlify.app',
+  },
+  {
+    title: 'LEGO Checker',
+    description: 'An info checker for Lego sets, including price, parts number, and other details',
+    imgKey: 'imageLegoChecker',
+    url: 'https://lego-checker.netlify.app',
   },
   {
     title: 'TAB Asia',
@@ -21,10 +27,10 @@ const works = [
     url: 'https://www.tab.asia',
   },
   {
-    title: 'LEGO Checker',
-    description: 'An info checker for Lego sets',
-    imgKey: 'imageLegoChecker',
-    url: 'https://lego-checker.netlify.com',
+    title: 'My Portfolio',
+    description: 'A personal website showing my info & works',
+    imgKey: 'imagePortfolio',
+    url: 'https://www.hpleung.com',
   },
 ]
 
@@ -58,6 +64,13 @@ const MyWork = () => {
       imageLegoChecker: file(relativePath: { eq: "lego-checker.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 480) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      imageChitChat: file(relativePath: { eq: "chitchat.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, maxHeight: 480) {
             ...GatsbyImageSharpFluid
           }
         }
