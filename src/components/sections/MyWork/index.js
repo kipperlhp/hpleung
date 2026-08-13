@@ -9,6 +9,30 @@ import breakpoint from '../../../utils/breakpoint'
 
 const works = [
   {
+    title: 'T.O.P. 十萬個氹掂美美的理由',
+    description: 'An AR-based web for users to take photos with virtual cartoon characters within a shopping mall',
+    imgKey: 'imageTopValentine',
+    url: 'https://www.linkreit.com/tc/media/news-releases/t-o-p-x-mr-h-h-x-gfwestface-present-100-000-ways-to-survive/',
+  },
+  {
+    title: 'Kolour 聖誕意味港遊',
+    description: 'A Christmas-themed interactive web allowing users to collect stamps in a shopping mall and redeem prizes',
+    imgKey: 'imageKolourChristmas',
+    url: 'https://webar.snappopapp.com/app/kolour_tw',
+  },
+  {
+    title: 'eBid Mobile',
+    description: 'A one-stop mobile platform allowing users to do real-time bidding and purchase second-hand electronics from various online auctions',
+    imgKey: 'imageEBid',
+    url: 'http://www.hangsengdev.com/en/we-chat',
+  },
+  {
+    title: 'HKSTP Experience Center',
+    description: 'An portable admin panel for monitoring the content & status of the devices at HKSTP Experience Center',
+    imgKey: 'imageHkstp',
+    url: 'https://betterfutureawards.com/HKG21/project.asp?ID=21850',
+  },
+  {
     title: 'Chitchat',
     description: 'A real-time chatroom with anonymous functionality allowing users to chat with strangers',
     imgKey: 'imageChitChat',
@@ -69,6 +93,34 @@ const MyWork = () => {
         }
       },
       imageChitChat: file(relativePath: { eq: "chitchat.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, maxHeight: 480) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      imageHkstp: file(relativePath: { eq: "hkstp.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, maxHeight: 480) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      imageEBid: file(relativePath: { eq: "ebid.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, maxHeight: 480) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      imageKolourChristmas: file(relativePath: { eq: "kolour-christmas.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480, maxHeight: 480) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      imageTopValentine: file(relativePath: { eq: "top-valentine.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 480, maxHeight: 480) {
             ...GatsbyImageSharpFluid
