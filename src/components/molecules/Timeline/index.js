@@ -6,6 +6,7 @@ import { Flex } from '@rebass/grid'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import Text from '../../atoms/Text'
+import './style-overide.css'
 
 const StyledVerticalTimeline = styled(VerticalTimeline)`
   &.vertical-timeline::before {
