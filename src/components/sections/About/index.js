@@ -80,13 +80,13 @@ const AboutSection = () => {
                 </Flex>
               </Flex>
             </Flex>
-            <Flex mt={24} justifyContent={['center', 'center', 'flex-start']}>
+            {/* <Flex mt={24} justifyContent={['center', 'center', 'flex-start']}>
               <Button>
                 <a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer">
                   <Text>View Resume</Text>
                 </a>
               </Button>
-            </Flex>
+            </Flex> */}
           </Box>
         </Fade>
       </Flex>
