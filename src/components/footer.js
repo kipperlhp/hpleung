@@ -18,7 +18,8 @@ const StyledViewport = styled(Viewport)`
 `
 
 const FooterWave = styled(Icon)`
-  transform: rotate(180deg) translateY(-2px);
+  margin-top: -15%;
+  transform: translateY(15%);
   color: ${palette('primary', 1)};
 `
 

@@ -27,7 +27,7 @@ const ContactSection = () => {
     }
   `)
   return (
-    <ScrollSection name="contact" title="Contact" mb="10rem">
+    <ScrollSection name="contact" title="Contact" mb="2rem">
       <Fade bottom cascade>
         <Image
           src={data.contactImage.childImageSharp.fluid}
