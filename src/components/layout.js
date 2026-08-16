@@ -31,11 +31,11 @@ const UpIconBtn = styled(Icon)`
   right: 0.8rem;
   transition: ease 0.3s;
   :hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) rotate(-360deg);
   }
   ${ifNotProp('isVisible', css`
     width: 0;
-    transform: translateY(50px);
+    transform: rotate(360deg);
   `)}
 `
 const menuItems = [
@@ -87,8 +87,8 @@ const Layout = ({ children }) => {
         </MainContent>
         <Footer />
         <UpIconBtn
-          icon="circle-up"
-          width="2.5rem"
+          icon="circle-up-hp"
+          width="3.5rem"
           isVisible={isUpBtnVisible}
           onClick={() => scroll.scrollToTop({ duration: 500 })}
         />
