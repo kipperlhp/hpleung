@@ -21,6 +21,7 @@ const FooterWave = styled(Icon)`
   margin-top: -15%;
   transform: translateY(15%);
   color: ${palette('primary', 1)};
+  z-index: -1;
 `
 
 const StyledA = styled.a`
@@ -44,7 +45,7 @@ const StyledDivider = styled.hr`
 
 const Footer = () => {
   return (
-    <Box>
+    <Flex flexDirection="column">
       <FooterWave icon="wave-bottom" width="100%" height="auto" />
       <StyledFooter>
         <StyledViewport>
@@ -68,7 +69,7 @@ const Footer = () => {
           </Text>
         </StyledViewport>
       </StyledFooter>
-    </Box>
+    </Flex>
   )
 }
 
